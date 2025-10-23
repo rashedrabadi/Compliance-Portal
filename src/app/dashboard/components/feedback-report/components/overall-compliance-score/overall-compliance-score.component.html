@@ -1,0 +1,14 @@
+<h3 class="header">Overall Compliance Score</h3>
+<div class="card">
+  <div class="gauge-container">
+    <div class="chart">
+      <div echarts [options]="option" class="chart-graph"></div>
+    </div>
+
+    <div class="legend">
+      <div class="item"><span class="color compliant"></span>81–100% Compliant</div>
+      <div class="item"><span class="color partial"></span>60–80% Partial Compliance</div>
+      <div class="item"><span class="color non"></span>0–59% Non-Compliant</div>
+    </div>
+  </div>
+</div>

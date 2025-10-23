@@ -1,0 +1,17 @@
+<h3 class="header">Recent Updates</h3>
+<div class="card">
+    <div class="updates-list">
+        <div class="update-item" *ngFor="let u of updates">
+            <div class="text">
+                <span *ngIf="u.text.includes(u.linkText); else normalText" [innerHTML]="
+            u.text.replace(
+              u.linkText,
+              '<a class=\'tag\' href=\'' + u.link + '\'>' + u.linkText + '</a>'
+            )
+          "></span>
+                <ng-template #normalText>{{ u.text }}</ng-template>
+            </div>
+            <div class="time">{{ u.days }}</div>
+        </div>
+    </div>
+</div>

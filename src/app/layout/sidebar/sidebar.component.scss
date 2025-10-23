@@ -1,0 +1,85 @@
+.side {
+  height: 100vh;
+  padding: 18px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.03);
+}
+
+/* ✅ Brand section */
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #3F3D3D;
+
+  .main-logo {
+    cursor: pointer;
+    width: 223px;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+/* ✅ Menu items */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 20px;
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #1e2a4a;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      opacity: 0.8;
+    }
+
+    &:hover {
+      background: #f1f5f9;
+    }
+
+    &.active {
+      background: #2b3674;
+      color: #fff;
+
+      .icon {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  .side {
+    height: auto;
+    border-radius: 0 0 16px 16px;
+    box-shadow: none;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .menu {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px 0;
+
+    .item {
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
+  }
+}

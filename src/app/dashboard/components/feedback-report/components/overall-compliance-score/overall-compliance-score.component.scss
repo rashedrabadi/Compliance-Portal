@@ -1,0 +1,61 @@
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+  margin-bottom: 25px;
+}
+
+.header {
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: -1;
+  color: #1B2559;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.gauge-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chart {
+  width: 180px;
+  height: 130px !important;
+}
+.chart-graph {
+    height: 180px !important;
+}
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  color: #374151;
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    .color {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+
+    .compliant {
+      background: #2b3674;
+    }
+    .partial {
+      background: #f4a261;
+    }
+    .non {
+      background: #e76f51;
+    }
+  }
+}

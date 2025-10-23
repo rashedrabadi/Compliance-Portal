@@ -1,0 +1,36 @@
+<div class="page-container">
+  <div class="breadcrumbs">
+    Home > Upload a project > <span>Compliance Analysis Check</span>
+  </div>
+
+  <h2 class="page-title">Compliance Check {{status}}</h2>
+
+  <div class="alert" *ngIf="progress < 100">
+    <img src="assets/icons/clock.svg" alt="clock" />
+    <span class="tag">
+      Your project is being compared with Sharjah Building Standards.
+      This may take a few seconds.
+    </span>
+  </div>
+
+  <div class="card progress-card">
+    <label class="status-label">{{ statusText }}</label>
+
+    <div class="progress-bar">
+      <div class="progress" [style.width.%]="progress"></div>
+    </div>
+
+    <div class="progress-info">{{ progress }}%</div>
+  </div>
+
+  <div class="hint">
+    <img src="assets/icons/alert-circle.svg" alt="alert-circle" />
+    <span>{{ hintText }}</span>
+  </div>
+
+  <div class="flex-btn">
+    <button *ngIf="statusText === 'Analysis Completed'" type="button" class="btn primary" (click)="onViewAnalysis()">
+      View Analysis
+    </button>
+  </div>
+</div>

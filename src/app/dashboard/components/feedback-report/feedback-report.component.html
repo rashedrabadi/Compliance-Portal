@@ -1,0 +1,59 @@
+<div class="page-container">
+  <div class="breadcrumbs">
+    Home > Upload a project > <span>Compliance Feedback Report</span>
+  </div>
+
+  <h2 class="page-title">Compliance Feedback Report</h2>
+
+  <div class="subtitle">
+    {{ project.name }} – Submitted on {{ project.date }}
+    <span class="status" [ngClass]="{
+        compliant: project.status === 'Compliant',
+        noncompliant: project.status !== 'Compliant'
+      }">{{ project.status }}</span>
+  </div>
+
+  <div class="actions">
+    <button class="btn">
+      <img src="assets/icons/pdf.svg" />
+      Download Full Report (PDF)
+    </button>
+    <button class="btn">
+      <img src="assets/icons/reupload.svg" />
+      Re-Upload
+    </button>
+    <button class="btn">
+      <img src="assets/icons/share.svg" />
+      Share Report
+    </button>
+  </div>
+
+  <div class="grid-main">
+    <div class="main-content">
+      <app-room-insights [title]="'Room Insights'" [rooms]="roomInsights">
+      </app-room-insights>
+
+      <app-recommendations *ngIf="recommendations.length" [recommendations]="recommendations">
+      </app-recommendations>
+      
+
+
+      <app-compliance-summary-table [rows]="complianceSummary">
+      </app-compliance-summary-table>
+    </div>
+
+    <aside class="sidebar">
+      <app-compliance-distribution [distribution]="complianceDistribution">
+      </app-compliance-distribution>
+
+      <app-overall-compliance-score [score]="project.overallScore">
+      </app-overall-compliance-score>
+
+      <app-overall-compliance-bar [data]="barData">
+      </app-overall-compliance-bar>
+
+      <app-key-findings-section *ngIf="fileType!=='dwg'" [findings]="findings">
+      </app-key-findings-section>
+    </aside>
+  </div>
+</div>
