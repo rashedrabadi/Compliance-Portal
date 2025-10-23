@@ -1,1 +1,0 @@
-export * from './monthly-compliance-chart.component';

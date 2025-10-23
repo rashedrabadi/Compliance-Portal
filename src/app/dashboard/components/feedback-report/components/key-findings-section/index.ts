@@ -1,1 +1,0 @@
-export * from './key-findings-section.component';

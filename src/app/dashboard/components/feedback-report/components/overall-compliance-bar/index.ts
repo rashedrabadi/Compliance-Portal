@@ -1,1 +1,0 @@
-export * from './overall-compliance-bar.component';

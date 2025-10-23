@@ -1,1 +1,0 @@
-export * from './compliance-summary-table.component';
